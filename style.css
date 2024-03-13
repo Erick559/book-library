@@ -22,3 +22,74 @@
 .add-button .add-icon{
     width: 50%;
 }
+
+.form-modal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    z-index: 10;
+    display: grid;
+    justify-items: center;
+    width:500px;
+    padding:40px;
+    background:#EADFB4;
+    border-radius: 20px;
+}
+
+.form-modal.active{
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.close-section{
+    width: 100%;
+    text-align: right;
+}
+
+.close-icon{
+    width:30px;
+    height:30px;
+    border-radius:50px;
+}
+
+.form-modal .add{
+    width:100px;
+    border-radius: 5px;
+    padding:10px;
+}
+
+form{
+    display: grid;
+    gap:15px;
+}
+
+h2{
+    text-align: center;
+}
+
+.input-row label:not(last-child){
+    display: block;
+}
+
+.overlay {
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(232, 215, 140, 0.5);
+    pointer-events: none;
+}
+
+.overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+button{
+    cursor: pointer;
+}
+    
