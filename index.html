@@ -9,6 +9,37 @@
     <title>BookMe</title>
 </head>
 <body>
-    
+    <div class="header">
+        <p class="title">Add a book</p>
+        <button class="add-button">
+            <img src="images/icon-plus.svg" alt="plus icon" class="add-icon">
+        </button>
+    </div>
+
+    <section class="books-container">
+
+    </section>
+
+    <div class="form-modal">
+        <form action="">
+            <h2>Add a new book</h2>
+            <div class="input-row">
+                <label for="title">Book Title<span aria-label="required">*</span></label>
+                <input type="text" id="title" name="title" required>
+            </div>
+            <div class="input-row">
+                <label for="author">Author<span aria-label="required">*</span></label>
+                <input type="text" id="author" name="author" required>
+            </div>
+            <div class="input-row">
+                <label for="genre">Book Genre<span aria-label="required">*</span></label>
+                <input type="text" id="genre" name="genre" required>
+            </div>
+            <div class="input-row">
+                <label for="read-status">Have you read the book?</label>
+                <input type="checkbox" name="read-status" id="read-status" required>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
