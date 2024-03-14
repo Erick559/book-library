@@ -92,4 +92,35 @@ h2{
 button{
     cursor: pointer;
 }
+
+.books-container{
+    padding:20px;
+    display: grid;
+    grid-template-columns:repeat(auto-fill,minmax(400px,1fr));
+}
+
+.book-card{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    width:400px;
+    padding:10px;
+    border-radius: 5px;
+    background:#CCD3CA;
+}
+
+.book-card h2{
+    font-size: 20px;
+}
+
+.button-div{
+    display: flex;
+    gap:10px;
+    justify-content: center;
+}
+
+.button-div button{
+    width:150px;
+    padding:10px;
+}
     
