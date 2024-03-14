@@ -18,12 +18,21 @@ function addBookToLibrary(){
     const author = document.querySelector('#author').value;
     const pageSize = document.querySelector('#page-size').value;
     const genre = document.querySelector('#genre').value;
-    const readStatus = document.querySelector('#read-status').value;
+    let readStatus = document.querySelector('#read-status');
 
-    const book = new Book(title, author, pageSize, genre, readStatus);
-    myLibrary.push(book);
+    if(readStatus.checked){
+        readStatus = 'Started Reading';
+    }
+    else{
+        readStatus = 'Not Yet';
+    }
 
-    console.log(myLibrary);
+    if(title !== '' && author !== '' && pageSize !=='' && genre !== ''){
+        const book = new Book(title, author, pageSize, genre, readStatus);
+        myLibrary.push(book);
+
+        console.log(myLibrary);
+    }
 }
 
 function openModal(){
