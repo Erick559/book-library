@@ -32,8 +32,6 @@ function addBookToLibrary(){
     if(title !== '' && author !== '' && pageSize !=='' && genre !== ''){
         const book = new Book(title, author, pageSize, genre, readStatus);
         myLibrary.push(book);
-
-        console.log(myLibrary);
     }
 };
 
@@ -91,10 +89,32 @@ function displayBooks(){
 
         card.append(infoDiv,buttonsDiv);
 
-        booksContainer.appendChild(card)
+        booksContainer.appendChild(card);
+
+        removeButton.addEventListener('click', () => {
+            const indexToRemove = myLibrary.findIndex(
+              (b) => b.title === book.title && b.author === book.author
+            );
+            if (indexToRemove !== -1) {
+              myLibrary.splice(indexToRemove, 1);
+              displayBooks();
+            }
+          });
+
+          readStatus.addEventListener('click', () => {
+            const indexToUpdate = myLibrary.findIndex(
+              (b) => b.title === book.title && b.author === book.author
+            );
+            if (indexToUpdate !== -1) {
+              myLibrary[indexToUpdate].readStatus =
+                myLibrary[indexToUpdate].readStatus === 'Started Reading'
+                  ? 'Not Yet'
+                  : 'Started Reading';
+              displayBooks();
+            }
+          });
     })
 };
-
 
 window.addEventListener('load', displayBooks)
 
@@ -107,7 +127,6 @@ modalAddButton.addEventListener('click', ()=>{
     closeModal();
     displayBooks();
 })
-
 
 
 
